@@ -14,12 +14,10 @@ määrä merkkiä #\, tai lihavointia merkkiparilla \**.
 
 # kohta a
 
-Tämä harjoitusraportti on tehty, tai ainakin yritetty tehdä Markdownilla,
-onko se sitten onnistunut yritys, en tiedä, kun en ole koskaan tällaista tehnyt
-enkä osaa testata jolloin toisella tekstieditorilla tms.
+Tämä harjoitusraportti on tehty markdownilla ilmeisesti siinä mielessä onnituneesti,
+että se avautuu githubissa sellaisilla muotoiluilla, kun on tarkoitettu.
 
-![]
-(https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaharjoitus.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaharjoitus.png)
 
 # kohta b
 
