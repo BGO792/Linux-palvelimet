@@ -23,6 +23,8 @@ enkä osaa testata jolloin toisella tekstieditorilla tms.
 
 # kohta b
 
+jotain
+
 # kohta b
 
 # kohta c 
