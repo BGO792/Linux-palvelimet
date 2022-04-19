@@ -32,21 +32,21 @@ Teen näihin muutoksia ja päivitän githubin seuraavilla komennoilla:
 * git commit (lisätään päivityslause)
 * git push
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvapull)
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaadd)
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvacommit)
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvapush)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvapull.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaadd.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvacommit.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvapush.png)
 
 # kohta b
 
 * git log kirjaa git-varastoon tehdyt muutokset:
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitlog)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitlog.png)
 
 * git diff ei antanut mitään tulosta
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitdiff)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitdiff.png)
 
 * git blame antoi kaikenlaisia vaihtoehtoja:
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitblame)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagitblame.png)
 
 # kohta c 
 
@@ -54,8 +54,8 @@ Teen näihin muutoksia ja päivitän githubin seuraavilla komennoilla:
 
 paremman salt-tilaesimerkin keksimisen puutteessa lainasin oppimateriaalista yhden: 
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaharjoitustila3initsls)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaharjoitustila3initsls.png)
 
 jonka ajo näyttäisi onnistuvan ongelmitta:
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltstateharjoitustila3)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltstateharjoitustila3.png)
 
