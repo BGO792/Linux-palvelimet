@@ -25,15 +25,17 @@ Tämä siksi, että LibreOffice haittaa muuten OpenOfficen asentumista
 
 Openofficen asentamiseen tarvittava asennustiedosto saatiin ladattua komennolla
 
-wget https://sourceforge.net/projets/openofficeorg.mirror/files/
-4.1.10/binaries/en-US/Apache_OpenOffice_4.1.10_Linux_x86-64_install-deb_en-US.tar.gz
+	wget https://sourceforge.net/projets/openofficeorg.mirror/files/
+	4.1.10/binaries/en-US/Apache_OpenOffice_4.1.10_Linux_x86-64_install-deb_en-US.tar.gz
 
 Paketin latautumisen jälkeen se purettiin komennolla
 
 	tar xvf Apache_OpenOffice_4.1.10_Linux_x86-64_install-deb_en_US.tar.gz
 
 Tämä loi kansion en-US/DEBS, johon siiryttiin cd-komennolla ja kansion sisällä
-aloitettin varsinainen asennus komenolla sudo dpkg -i *.deb
+aloitettin varsinainen asennus komenolla 
+
+	sudo dpkg -i *.deb
 
 Tämän jälkeen piti vielä purkaa ja asentaa työpöytä-integraatiot komennoilla
 
@@ -49,8 +51,13 @@ Vasta tehtyäni tämän asennuksen luin tehtävänantoa vielä uudestaan tajutak
 tarkoituksen olleen käyttää valmiita pakettivarastoija, jotta asennus toimisi
 yksinkertaisesti, kuten inkscape kanssa. Tosiinsanoen OpenOfficen asennus ei vastaa
 tehtävänantoa. Päädyin siis takaisin arpomaan paketinhallinnan kautta asennettavissa
-olevia ohjelmia, yhdeksi niistä valikoitui Dia (sudo apt-get install dia)
-kolmanneksi testiohjelmaksi päätin ottaa GIMP:in (sudo apt-get install gimp)
+olevia ohjelmia, yhdeksi niistä valikoitui Dia
+
+	sudo apt-get install dia
+	
+kolmanneksi testiohjelmaksi päätin ottaa GIMP:in
+
+	sudo apt-get install gimp
 
 Näiden asennus salt-tilana tehtiin maurinohjelmat.init.sls-tiedostoon paloittain
 Ensimmäisenä lisättiin inkscape-paketti ja testattiin tiedoston toimivuus
