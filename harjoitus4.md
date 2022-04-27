@@ -74,12 +74,37 @@ Kun halutaan asentaa useampi paketti kerralla, pitää init.sls-tiedosto muokata
 	      -dia
 	      -gimp
 
+Edit 27.4.2022:
+
+Salt-tilan toimivuus testattiin poistamalla tehdyt manuaaliset asennukset komennoilla:
+
+	sudo apt-get remove inkscape
+	sudo apt-get remove dia
+	sudo apt-get remove gimp
+
+Tämän jälkeen ajettiin salt-tila komennolla:
+
+	sudo salt-call --local state.apply maurinohjelmat
+
+Tulokseksi tuli seuraava näkymä:
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltmasterrun1.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltmasterrun2.png)
+
+Asennuksen toimivuus testattiin avaamalla mainitut ohjelmat:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvainkscape.png)
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvadia.png)
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvagimp.png)
+
+
 # kohta b
 
 Tässä kohdassa olisi pitänyt tehdä tiedostoista aikajana, mutta tehtävänannossa 
 annettu komento ei jostain syystä toimi, niin en pystynyt sitä tekemään.
 
-Edit 27.4.2022
+Edit 27.4.2022:
 
 Muiden palautuksia arvioidessa huomasin, että tehtävänannossa oleva mallikomento oli kirjoitettu 
 sen verran tiiviisti, että en huomannut komennossa olleita välilyöntejä, jonka takia en saanut
@@ -95,7 +120,7 @@ Sain aikaan tällaisen aikajanan:
 
 Tehtävä edellyttäisi toimivan aikajanan aikaansaamista, joten ei onnistu
 
-Edit 27.4.2022
+Edit 27.4.2022:
 
 Kun aikajanakomento saatiin toimimaan, niin pääsin tämän kohdan kanssa eteenpäin.
 Muokkasin kokeen vuoksi saltin master-dokumenttia lisäämällä sinne turhaa tekstiä alla olevan mukaisesti:
