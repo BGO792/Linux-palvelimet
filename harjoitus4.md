@@ -79,9 +79,32 @@ Kun halutaan asentaa useampi paketti kerralla, pitää init.sls-tiedosto muokata
 Tässä kohdassa olisi pitänyt tehdä tiedostoista aikajana, mutta tehtävänannossa 
 annettu komento ei jostain syystä toimi, niin en pystynyt sitä tekemään.
 
+Edit 27.4.2022
+
+Muiden palautuksia arvioidessa huomasin, että tehtävänannossa oleva mallikomento oli kirjoitettu 
+sen verran tiiviisti, että en huomannut komennossa olleita välilyöntejä, jonka takia en saanut
+komentoa toimimaan. Tämän huomion mukaisesti korjatulla komennolla
+
+	sudo find -printf '%T+ %p\n'|sort|tail
+	
+Sain aikaan tällaisen aikajanan:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaaikajana.png)
+
 # kohta c
 
 Tehtävä edellyttäisi toimivan aikajanan aikaansaamista, joten ei onnistu
+
+Edit 27.4.2022
+
+Kun aikajanakomento saatiin toimimaan, niin pääsin tämän kohdan kanssa eteenpäin.
+Muokkasin kokeen vuoksi saltin master-dokumenttia lisäämällä sinne turhaa tekstiä alla olevan mukaisesti:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltmastermod.png)
+
+Tämä muokkaus näkyy sitten aikajanalla näin:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaaikajana1.png)
 
 # kohta d
 
