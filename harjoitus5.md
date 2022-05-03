@@ -33,12 +33,12 @@ ja kopioitiin tehty scripti:
 
 Aikaansaannoksesta haluttiin myös ls -l /usr/local/bin tuloste:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuva_ls_usr_local_bin_tuloste.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuva_ls_usr_local_bin-tuloste.png)
 
 # kohta b
 
 Kohdassa b oli tehtävänä tehdä toinen uusi komento, joka kertoo ajankohtaista tietoa.
-Päätin yksinkertaisuuden vuoksi tehdä scrptin, joka kertoo kellonajan:
+Päätin yksinkertaisuuden vuoksi tehdä scriptin, joka kertoo kellonajan:
 
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvadatescript.png)
 
@@ -47,6 +47,8 @@ joka testattiin samalla tavalla, kun kohdan a scripti:
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvadatescripttest.png)
 
 Tästä vastaavasti tehtiin samankaltainen salt-tila, kuin kohdasta a:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvadatescriptsalt.png)
 
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvadatescriptsaltfile.png)
 
