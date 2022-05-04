@@ -35,6 +35,16 @@ Aikaansaannoksesta haluttiin myös ls -l /usr/local/bin tuloste:
 
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuva_ls_usr_local_bin-tuloste.png)
 
+Edit 4.5.2022:
+
+Lopputulosta testattiin jälkikäteen tyjentämällä /usr/local/bin:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaemptybin.png)
+
+ja ajamalla salt-tila uudelleen:
+
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaaikascriptisalt.png)
+
 # kohta b
 
 Kohdassa b oli tehtävänä tehdä toinen uusi komento, joka kertoo ajankohtaista tietoa.
