@@ -86,9 +86,9 @@ Tämän salt-tilan ajaminen tuotti alla olevan tuloksen:
 
 Kun nettiselaimella käy muutosten jälkeen katsomassa annettuja porrtteja localhost:8081 ja localhost:8082 tulee yllättäen sama apache2:n oletusetusivu:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8081.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2defaultindex8081.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2defaultindex8082.png)
 
 Syy tälle on molemmilla servereillä oleva konfiguraatio katsoa oletusetusivu samasta /var/www/html- kansiosta, jossa sattuu olemaan apache2:n sivu ensimmäisenä.
 Itse päätin korjata tämän lisäämällä nginx:n konfiguraatioon kyseiseen html-kansioon alikansion /nginx ja lisäämällä init.sls-tiedostoon kansion lisäävän komennon: 
@@ -153,7 +153,7 @@ Lopullinen init.sls on siis:
 
 ja salt-moduulin sisältö:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaserversetupinit.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetupinit.png)
 
 Salt-tilan ajaminen tuotti tällaisen lopputuloksen:
 
