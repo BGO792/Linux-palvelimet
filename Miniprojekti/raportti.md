@@ -165,9 +165,9 @@ Salt-tilan ajaminen tuotti tällaisen lopputuloksen:
 
 Muutosket näkyvät myös nettiselaimella:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxdefault8081.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxdefaultindex8081.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082new.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2defaultindex8082new.png)
 
 
       
