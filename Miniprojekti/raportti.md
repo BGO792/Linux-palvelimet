@@ -1,7 +1,10 @@
 # Projektin tavoite
 
-Projektin tavoitteena oli luoda salt-tila, joka asentaa kaksi eri serveriohjelmaa samalle koneelle siten, 
+Toisinaan voi olla tarkoituksenmukaista asentaa samalle serverilaitteelle kaksi eri serveriohjelaa
+tekemään eri asioita. Tämän projektin tavoitteena oli perehtyä miten tuo saatasiin tehtyä luomalla yksittäinen salt-tila.
+Tilan tarkoituksena on siis asentaa kaksi eri serveriohjelmaa samalle koneelle siten, 
 että ohjelmat käyttävät eri porttikonfiguraatioita ja seuraavat eri index-sivuja.
+
 Serverivaihtoehdoiksi päätyivät kurssin aikana käytetyt Apache2 ja Nginx-serverit.
 
 ## Pakettien asentaminen
@@ -12,7 +15,7 @@ Käsin asennettuina nämä asentuvat komennoilla:
 	sudo apt-get install -y nginx
 
 Apachen ensiasennuksen jälkeen nettiselaimen localhost-osoitteeseen ilmestyy alla olevan kuvan mukainen oletussivu:
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapachedefaultindex.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2defaultindex.png)
 
 Nginx:llä vastaava on tällainen:
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxdefaultindex.png)
@@ -40,10 +43,10 @@ Apache2:ssa vastaava vaatii kahden eri tiedoston, eli /etc/apache2/ports.conf ja
 
 ![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2sites.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2ports.png)
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapacheports.png)
 
 Harjoituksessa Nginx konfiguroitiin porttiin 8081 ja Apache2 porttiin 8082. Salt-tilaa muokattiin tekemään tämä automaattisesti kopioimalla kyseiset tiedostot salt-moduulin kansioon
-ja lisäämällä init.sls-tiedostoon vastaavat komennot, joilla kyseisiin tiedostoihin tehtäviä muutoksia voi sekä masterin kautta muokata tai käyttäjän vahingossa tekemiä muutoksia korjata.
+ja lisäämällä init.sls-tiedostoon vastaavat komennot, joilla kyseisiin tiedostoihin tehtäviä muutoksia voi sekä masterin kautta muokata, tai korjata käyttäjän vahingossa tekemiä muutoksia.
 Salt.moduulissa olevien tiedostojen nimiä muokattiin vähän, jotta ne olisivat kuvaavampia. Porttimuutoksien voimaantulo edellyttää myös serverin uudelleenkäynnistämisen. Salt:illa
 tämä on helppo automatisoida laittamalla service.running seuraamaan muutoksia porttikonfiguraatio-tiedostoissa erillisellä "watch"-alikomennolla. Tässä kohtaa init.sls muodostui siis tällaiseksi.
 
@@ -77,15 +80,15 @@ tämä on helppo automatisoida laittamalla service.running seuraamaan muutoksia 
 
 Tämän salt-tilan ajaminen tuotti alla olevan tuloksen:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup2.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup2.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup3.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup3.png)
 
 Kun nettiselaimella käy muutosten jälkeen katsomassa annettuja porrtteja localhost:8081 ja localhost:8082 tulee yllättäen sama apache2:n oletusetusivu:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8081.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8081.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082.png)
 
 Syy tälle on molemmilla servereillä oleva konfiguraatio katsoa oletusetusivu samasta /var/www/html- kansiosta, jossa sattuu olemaan apache2:n sivu ensimmäisenä.
 Itse päätin korjata tämän lisäämällä nginx:n konfiguraatioon kyseiseen html-kansioon alikansion /nginx ja lisäämällä init.sls-tiedostoon kansion lisäävän komennon: 
@@ -103,7 +106,7 @@ Itse päätin korjata tämän lisäämällä nginx:n konfiguraatioon kyseiseen h
 
 Nginx:n porttikonfiguraatiotiedostoa piti korjat seuraamaan tätä uutta kansiota:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxports1.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxports1.png)
 
 Samassa yhteydessä muokkasin noita salt-moduulissa olevia index-sivuja osoittamaan, että salt-tila hyödyntää nimenomaan salt-moduulissa olevia index-sivuja.
 
@@ -150,21 +153,21 @@ Lopullinen init.sls on siis:
 
 ja salt-moduulin sisältö:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaserversetupinit.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaserversetupinit.png)
 
 Salt-tilan ajaminen tuotti tällaisen lopputuloksen:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup4.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup4.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup5.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup5.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup6.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvasaltserversetup6.png)
 
 Muutosket näkyvät myös nettiselaimella:
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxdefault8081.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvanginxdefault8081.png)
 
-![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082new.png
+![](https://github.com/BGO792/Palvelintenhallinta/blob/main/kuvat/kuvaapache2default8082new.png)
 
 
       
